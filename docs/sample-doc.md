@@ -4,7 +4,7 @@ Supports deploying any Ruby application. Your application can use any Ruby appli
 
 ## Supported versions
 
-You can select the major and minor version. Patch versions are applied periodically for bug fixes and the like. When you deploy your app, you always get the latest available patches.
+You can select the major and minor versions. Patch versions are applied periodically for bug fixes and the like. When you deploy your app, you always get the latest available patches.
 
 ### Ruby
 
