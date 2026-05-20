@@ -1,4 +1,6 @@
 # Ruby
+<!-- test edit -->
+
 
 Supports deploying any Ruby application. Your application can use any Ruby application server such as Puma or Unicorn and deploying a Rails or a Sinatra app is very straight forward.
 
@@ -16,7 +18,7 @@ To use Ruby, specify `ruby` as your app's `type`. For example:
 
 The following versions have been retired and are no longer available. If your project uses a retired version, you must update to a supported version.
 
-## Puma based Rails configuration
+## Puma-based Rails configuration
 
 This example uses Puma to run a Ruby application. You could use any Ruby application server such as Unicorn. Configure the `.upsun/config.yaml` file with a few key settings as listed below. A complete example is included at the end of this section.
 
