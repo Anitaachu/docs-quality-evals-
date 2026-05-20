@@ -1,1 +1,51 @@
+# Docs Quality Check — reference workflow
+#
+# Triggers on pull requests that touch documentation files.
+# Runs a Python script that scores changed pages using an LLM judge
+# and posts the results as a PR comment.
+#
+# Setup:
+#   1. Add ANTHROPIC_API_KEY as a repository secret
+#   2. Adjust the `paths` filter to match where your docs live
+#   3. Customize the rubric in ../judge_prompt.md
+#
+# This is a reference implementation. Test before deploying.
 
+name: Docs Quality Check
+
+on:
+  pull_request:
+    paths:
+      - 'docs/**/*.md'
+      - 'docs/**/*.mdx'
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  score-changed-docs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Need full history to diff against the base branch
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install anthropic requests
+
+      - name: Score changed docs
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          REPO: ${{ github.repository }}
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: python .github/scripts/score_docs.py
