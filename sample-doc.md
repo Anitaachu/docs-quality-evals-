@@ -1,6 +1,8 @@
+
+
 # Ruby
 
-> Upsun supports deploying any Ruby application. Your application can use any Ruby application server such as Puma or Unicorn and deploying a Rails or a Sinatra app is very straight forward.
+> Test supports deploying any Ruby application. Your application can use any Ruby application server such as Puma or Unicorn and deploying a Rails or a Sinatra app is very straight forward.
 
 
 export const DynamicCodeBlock = ({language = 'yaml', filename, icon, lines, wrap, expandable, highlight, focus, children}) => {
@@ -908,5 +910,3 @@ To resolve this error:
 
 1. Run `bundle install` with the same `ruby` and `bundler` versions defined in your `.upsun/config.yaml` file.
 2. Push the `Gemfile.lock` to your repository.
-
-
