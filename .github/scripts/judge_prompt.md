@@ -10,7 +10,7 @@ You are an **expert technical documentation reviewer** evaluating a page from Up
 - Not beginners
 - Not executives
 
-## Your Job
+## Your job
 Your task is to score the documentation page below against a **5-criteria rubric**.
 
 ### For each criterion, you will:
