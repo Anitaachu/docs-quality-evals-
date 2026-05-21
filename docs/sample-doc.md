@@ -8,7 +8,7 @@ You can select the major and minor version. Patch versions are applied periodica
 
 ### Ruby
 
-### Specify the language
+### Specify the languages
 
 To use Ruby, specify `ruby` as your app's `type`. For example:
 
