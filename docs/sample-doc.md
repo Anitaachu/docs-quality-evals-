@@ -76,7 +76,7 @@ services:
 
 For Rails, you can use the standard Rails `config/database.yml` with the values found with the snippet provided before.
 
-## Other tips
+## Other resources
 
 
 - To speed up boot you can use the Bootsnap gem and configure it with the local `/tmp`:
